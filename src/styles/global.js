@@ -5,17 +5,15 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
   }
 
   body {
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
     color: ${({ theme }) => theme.COLORS.WHITE};
-
-    font-family: 'Roboto Slab', serif;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-
-    outline: none;
   }
 
   a {
