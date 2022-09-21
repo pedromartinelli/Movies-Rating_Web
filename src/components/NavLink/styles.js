@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.a`
   background: none;
-  color: ${({ theme }) => theme.COLORS.GRAY_100};
+  color: ${({ theme }) => theme.COLORS.PINK};
 
   display: flex;
   align-items: center;

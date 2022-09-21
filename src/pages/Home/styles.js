@@ -5,7 +5,7 @@ export const Container = styled.div`
   height: 100vh;
 
   > main {
-    padding: 0 350px;
+    padding: 0 300px;
   }
 `;
 

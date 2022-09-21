@@ -54,6 +54,5 @@ export const Form = styled.form`
 
   > a {
     margin: 0 auto;
-    color: ${({ theme }) => theme.COLORS.PINK};
   };
 `;
