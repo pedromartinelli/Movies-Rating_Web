@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled.a`
-  background: none;
   color: ${({ theme }) => theme.COLORS.PINK};
 
   display: flex;
@@ -13,8 +12,9 @@ export const Container = styled.a`
 
   padding-right: 28px;
 
-
   > svg {
     font-size: 25px;
-  }
+    color: ${({ theme }) => theme.COLORS.PINK};
+    margin-top: 3px;
+  };
 `;
