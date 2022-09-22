@@ -17,7 +17,7 @@ export const NewMovie = styled.div`
   margin: 63px 0 50px;
   font-size: 32px;    
 
-  > button {
+  > a {
       display: flex;
       align-items: center;
       gap: 8px;

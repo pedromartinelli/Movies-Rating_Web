@@ -1,5 +1,7 @@
 import { Container, NewMovie, Content } from "./styles";
 
+import { Link } from "react-router-dom";
+
 import { FiPlus } from "react-icons/fi";
 
 import { Header } from "../../components/Header";
@@ -14,10 +16,10 @@ export function Home() {
         <NewMovie>
             Meus filmes
 
-            <button>
+            <Link to='new'>
               <FiPlus />
               Adicionar filme
-            </button>
+            </Link>
         </NewMovie>
 
         <Content>

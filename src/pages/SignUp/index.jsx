@@ -37,7 +37,7 @@ export function SignUp() {
 
         <Button title='Cadastrar' />
 
-        <NavLink title='Voltar para o login' to='/register' />
+        <NavLink title='Voltar para o login' to='/' />
 
       </Form>
 

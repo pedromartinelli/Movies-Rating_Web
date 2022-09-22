@@ -25,7 +25,7 @@ export const Container = styled.div`
   }
 `;
 
-export const HomeNav = styled.a`
+export const HomeNav = styled(Link)`
 
   color: ${({ theme }) => theme.COLORS.PINK};
   font-weight: 700;
@@ -51,19 +51,25 @@ export const Profile = styled.div`
 
     align-items: flex-end;
 
-    > strong {
+    > a:first-child {
+      color: ${({theme}) => theme.COLORS.WHITE};
+      font-weight: 700;
+      
       width: 126px;
     }
 
-    > span {
+    > a:last-child {
       color: ${({ theme }) => theme.COLORS.GRAY_200};
       font-size: 14px;
     }
   };
 
-  > img {
+  > a {
+     img {
     width: 64px;
     height: 64px;
     border-radius: 50%;
   };
+  };
+  
 `;

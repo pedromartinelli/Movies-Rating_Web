@@ -8,7 +8,7 @@ import { Input } from '../Input';
 export function Header() {
   return (
     <Container>
-      <HomeNav to='/home'>
+      <HomeNav to='/'>
         <h1>moviesRating</h1>
       </HomeNav>
 
@@ -20,11 +20,14 @@ export function Header() {
 
       <Profile>
         <div>
-          <strong>Pedro Martinelli</strong>
-          <span>sair</span>
+          <Link to='/profile'>Pedro Martinelli</Link>
+          <Link>sair</Link>
         </div>
-        
-        <img src="https://github.com/pedromartinelli.png" alt="" />
+
+        <Link to='/profile'>
+          <img src="https://github.com/pedromartinelli.png" alt="" />
+
+        </Link>
       </Profile>
     </Container>
   );
