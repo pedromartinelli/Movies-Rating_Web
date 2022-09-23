@@ -2,7 +2,6 @@ import { Container, Content, Section } from "./styles";
 
 import { FiClock } from 'react-icons/fi';
 
-import { Tag } from "../../components/Tag";
 import { Header } from "../../components/Header";
 import { NavLink } from "../../components/NavLink";
 import { Rating } from "../../components/Rating";
@@ -15,7 +14,9 @@ export function Details() {
 
       <main>
         <Content>
-          <NavLink title='Voltar' to='/' />
+          <header>
+            <NavLink title='Voltar' to='/' />
+          </header>
 
           <Section>
             <div>

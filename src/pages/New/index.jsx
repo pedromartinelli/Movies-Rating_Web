@@ -14,22 +14,26 @@ export function New() {
 
       <main>
         <Form>
-          <NavLink title='voltar' to='/'/>
-          <h1>Novo Filme</h1>
+
+          <header>
+            <NavLink title='Voltar' to='/' />
+            <h1>Novo Filme</h1>
+          </header>
+
 
           <div className='Inputs'>
             <Input placeholder='Título' />
             <Input placeholder='Sua note (de 0 a 5)' />
           </div>
 
-          <Textarea placeholder='Observações'/>
+          <Textarea placeholder='Observações' />
 
           <p>Marcadores</p>
 
           <div className='tags'>
-            <MovieTag value='Drama'/>
-            <MovieTag value='Policial'/>
-            <MovieTag isNew placeholder='Novo marcador'/>
+            <MovieTag value='Drama' />
+            <MovieTag value='Policial' />
+            <MovieTag isNew placeholder='Novo marcador' />
           </div>
 
           <div className='Buttons'>

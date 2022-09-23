@@ -15,17 +15,26 @@ export const Container = styled.div`
     grid-area: content; 
     overflow-y: auto;
   };
-
 `;
 
 export const Form = styled.form`
   max-width: 1173px;
   margin: 40px auto;
 
-  > h1 {
+  > header {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    h1 {
       font-size: 36px;
       margin: 24px 0 40px;
     };
+  };
+
 
   .Inputs {
     display: flex;
@@ -46,8 +55,8 @@ export const Form = styled.form`
     gap: 40px;
 
     button:first-child {
-      background-color: ${({theme}) => theme.COLORS.BACKGROUND_900};
-      color: ${({theme}) => theme.COLORS.PINK};
+      background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+      color: ${({ theme }) => theme.COLORS.PINK};
     };
   };
   
@@ -57,7 +66,7 @@ export const Form = styled.form`
 
   > p {
     font-size: 20px;
-    color: ${({theme}) => theme.COLORS.GRAY_300};
+    color: ${({ theme }) => theme.COLORS.GRAY_300};
   };
 
   .tags {
@@ -69,7 +78,7 @@ export const Form = styled.form`
     padding: 16px 16px 10px;
     border-radius: 8px;
 
-    background-color: ${({theme}) => theme.COLORS.BACKGROUND_900};
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
     
     margin: 24px 0 8px;
   
@@ -82,5 +91,5 @@ export const TagsSection = styled.div`
 
   margin-top: 40px;
 
-  background-color: ${({theme}) => theme.COLORS.BACKGROUND_900};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 `;

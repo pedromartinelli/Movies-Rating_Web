@@ -22,8 +22,15 @@ export const Content = styled.div`
 
   display: flex;
   flex-direction: column;
-  
 
+  > header {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  };
 
   > p {
     font-size: 16px;
@@ -40,7 +47,11 @@ export const Content = styled.div`
     cursor: context-menu;
 
     &:hover {
-        filter: none;
+      filter: none;
+    };
+
+    &:focus {
+      outline: none;
     };
     
     span {
