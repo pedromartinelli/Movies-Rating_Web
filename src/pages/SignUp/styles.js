@@ -94,12 +94,16 @@ export const Form = styled.form`
       color: ${({ theme }) => theme.COLORS.WHITE};
       border: none;
 
-      padding: 18px 52px;
+      padding: 18px 20px 18px 52px;
       position: relative;
     
       &::placeholder {
         font-weight: 400;
         color: ${({ theme }) => theme.COLORS.GRAY_200};
+      };
+
+      &::-ms-reveal {
+        filter: invert(70%);
       };
     };
 
