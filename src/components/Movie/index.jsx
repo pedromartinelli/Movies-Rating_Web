@@ -1,16 +1,34 @@
+import { useState } from "react";
 import { Container } from "./styles";
 
-import { Tag } from '../Tag'; 
-import { Rating } from '../Rating'; 
+import { Tag } from '../Tag';
+import { Rating } from '../Rating';
 
 export function Movie({ data, ...rest }) {
-  return(
+  const [rating, setRating] = useState(3);
+
+  function getRatingClasses(value) {
+    let classes = "fa fa-star";
+    if (value <= rating) {
+      classes = classes + " checked";
+    }
+
+    return classes;
+  }
+
+  return (
     <Container>
       <h1> {data.title} </h1>
 
+      <div className='App'>
+        {[...Array(5).keys()].map((x) => {
+          <span class={getRatingClasses(x)}></span>;
+        })}
+      </div>
+
       <Rating />
 
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus iusto aspernatur nemo itaque ipsam dolores, in tempore laborum voluptatum inventore dicta cupiditate similique quia rerum dolore, quaerat quae! Repellendus, consequatur. </p>
+      <p> {data.description} </p>
       {
         data.tags &&
         <footer>
@@ -20,6 +38,6 @@ export function Movie({ data, ...rest }) {
         </footer>
       }
     </Container>
-  ); 
+  );
 };
 

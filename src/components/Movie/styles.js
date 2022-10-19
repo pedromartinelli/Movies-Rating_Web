@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
-
-
 export const Container = styled.button`
   width: 100%;
 
-  background-color: ${({theme}) => theme.COLORS.PINK_5OP};
+  background-color: ${({ theme }) => theme.COLORS.PINK_5OP};
   border: none;
   border-radius: 16px;
 
@@ -17,12 +15,12 @@ export const Container = styled.button`
   > h1 {
     text-align: left;
     font-size: 24px;
-    color: ${({theme}) => theme.COLORS.WHITE};
+    color: ${({ theme }) => theme.COLORS.WHITE};
   };
   
   > p {
     margin: 15px 0;
-    color: ${({theme}) => theme.COLORS.GRAY_300};
+    color: ${({ theme }) => theme.COLORS.GRAY_300};
   }
 
   > footer {
@@ -30,5 +28,14 @@ export const Container = styled.button`
     display: flex;
     gap: 8px;
     margin-top: 24px;
+  }
+
+  > div {
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  .checked {
+    color: ${({ theme }) => theme.COLORS.PINK};
   }
 `;
