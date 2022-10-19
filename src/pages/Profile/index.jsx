@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import * as zod from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -23,35 +25,37 @@ export function Profile() {
   const [avatar, setAvatar] = useState(avatarUrl);
   const [avatarFile, setAvatarFile] = useState(null);
 
+  const navigate = useNavigate();
+
   const schema = zod.object({
     name: zod.string().min(1, { message: 'Introduza um nome.' }),
     email: zod.string().email({ message: 'Introduza um endereço de email válido.' }),
-    oldPassword: zod.string(),
-    newPassword: zod.string()
+    oldPassword: zod.string().min(1, { message: 'Informe a senha atual.' }),
+    newPassword: zod.string(),
   });
 
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({
-    resolver: zodResolver(schema)
+    resolver: zodResolver(schema),
+    defaultValues: user,
   });
 
-  async function handleUpdate(user) {
-    console.log(avatarFile)
-    console.log('oi')
+  async function handleUpdate(data) {
 
     const updated = {
-      name: user.name,
-      email: user.email,
-      password: user.newPassword,
-      old_password: user.oldPassword
+      name: data.name,
+      email: data.email,
+      password: data.newPassword,
+      old_password: data.oldPassword
     }
 
     const userUpdated = Object.assign(user, updated);
-
+    
     await updateProfile({ user: userUpdated, avatarFile })
+    // navigate(-1)
   };
 
   function handleAvatarChange(event) {

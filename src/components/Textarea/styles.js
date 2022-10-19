@@ -8,8 +8,6 @@ export const Container = styled.textarea`
   color: ${({ theme }) => theme.COLORS.WHITE};
   
   padding: 18px 16px;
-
-  margin-bottom: 8px;
   
   border: none;
   border-radius: 10px;
