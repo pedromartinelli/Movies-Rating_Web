@@ -2,14 +2,10 @@ import { Container } from "./styles";
 
 import { FiStar } from 'react-icons/fi'
 
-export function Rating() {
+export function Rating({ className }) {
   return (
     <Container>
-      <FiStar className="checked"/>
-      <FiStar className="checked"/>
-      <FiStar className="checked"/>
-      <FiStar className="checked"/>
-      <FiStar />
+      <FiStar className={className}/>
     </Container>
   );
 

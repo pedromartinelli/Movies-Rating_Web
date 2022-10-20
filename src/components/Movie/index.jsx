@@ -5,28 +5,27 @@ import { Tag } from '../Tag';
 import { Rating } from '../Rating';
 
 export function Movie({ data, ...rest }) {
-  const [rating, setRating] = useState(3);
 
-  function getRatingClasses(value) {
-    let classes = "fa fa-star";
-    if (value <= rating) {
-      classes = classes + " checked";
+  function addRatingCheckedClass(value) {
+    let checkedClass;
+    if (value <= data.rating - 1) {
+      checkedClass = checkedClass + " checked";
     }
 
-    return classes;
+    return checkedClass;
   }
 
   return (
     <Container>
       <h1> {data.title} </h1>
 
-      <div className='App'>
-        {[...Array(5).keys()].map((x) => {
-          <span class={getRatingClasses(x)}></span>;
-        })}
+      <div>
+        {
+          [...Array(5).keys()].map((x, index) => {
+            return <Rating key={index} className={addRatingCheckedClass(x)} />;
+          })
+        }
       </div>
-
-      <Rating />
 
       <p> {data.description} </p>
       {

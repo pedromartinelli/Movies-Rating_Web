@@ -31,11 +31,7 @@ export const Container = styled.button`
   }
 
   > div {
-    font-family: sans-serif;
-    text-align: center;
+    display: flex;
   }
-
-  .checked {
-    color: ${({ theme }) => theme.COLORS.PINK};
-  }
+  
 `;
