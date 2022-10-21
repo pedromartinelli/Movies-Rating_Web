@@ -13,9 +13,16 @@ import { FiPlus } from "react-icons/fi";
 export function Home() {
   const [movies, setMovies] = useState([]);
 
-  // function handleMovieDetails(id) {
-  //   navigate(`/details/${id}`)
-  // };
+  const navigate = useNavigate();
+
+  function handleMovieDetails(id) {
+    console.log('Cliquei')
+    navigate(`/details/${id}`);
+  };
+
+  const funciona = () => {
+    console.log('Funcionou')
+  }
 
   useEffect(() => {
     async function fetchMovies() {
@@ -46,13 +53,14 @@ export function Home() {
               <Movie
                 key={String(movie.id)}
                 data={movie}
-              // onClick={() => handleMovieDetails(movie.id)}
+                onClick={() => handleMovieDetails(movie.id)}
               />
             ))
           }
         </Content>
+
       </main>
 
-    </Container>
+    </Container >
   );
 };

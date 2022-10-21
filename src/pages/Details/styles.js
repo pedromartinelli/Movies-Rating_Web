@@ -39,32 +39,18 @@ export const Content = styled.div`
     text-align: justify;
   };
 
-  > button {
-    background-color: transparent;
-    padding: 0;
-    margin: 20px 0 0;
-
-    cursor: context-menu;
-
-    &:hover {
-      filter: none;
-    };
-
-    &:focus {
-      outline: none;
-    };
-    
-    span {
+  > div {
+    > span {
       background-color: ${({theme}) => theme.COLORS.PINK_5OP};
+      margin-right: 5px;
     };
-
-    h1, p, div {
-      display: none;
-    };
-  };
+  }
+  
 `;
 
 export const Section = styled.section`
+  margin-bottom: 40px;
+  
   > div:nth-child(1) {
     display: flex;
     align-items: center;

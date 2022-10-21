@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Container } from "./styles";
 
 import { Tag } from '../Tag';
@@ -16,7 +15,7 @@ export function Movie({ data, ...rest }) {
   }
 
   return (
-    <Container>
+    <Container {...rest}>
       <h1> {data.title} </h1>
 
       <div>
