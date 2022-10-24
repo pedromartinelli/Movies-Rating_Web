@@ -28,6 +28,15 @@ export function Details() {
     return checkedClass;
   }
 
+  async function handleDeleteMovie() {
+    const confirm = window.confirm('Deseja realmente remover o filme?');
+
+    if (confirm) {
+      await api.delete(`/movies/${params.id}`);
+      navigate(-1);
+    }
+  };
+
   useEffect(() => {
     async function fetchMovie() {
       const response = await api.get(`/movies/${params.id}`);
@@ -50,6 +59,10 @@ export function Details() {
                 title='Voltar'
                 onClick={() => navigate(-1)}
               />
+
+              <button
+                onClick={() => handleDeleteMovie()}
+              >Excluir Filme</button>
             </header>
 
             <Section>

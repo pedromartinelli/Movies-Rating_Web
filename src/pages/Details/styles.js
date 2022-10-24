@@ -28,8 +28,15 @@ export const Content = styled.div`
     height: auto;
 
     display: flex;
-    align-items: flex-start;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
+
+    > button {
+      background: none;
+      border: none;
+
+      color: ${({theme}) => theme.COLORS.PINK};
+    }
   };
 
   > p {

@@ -38,13 +38,10 @@ export const Form = styled.form`
   .Buttons {
     display: flex;
       
-    margin-top: 40px;
     gap: 40px;
-    
-    button:first-child {
-      background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
-      color: ${({ theme }) => theme.COLORS.PINK};
-    };
+    width: 500px;
+
+    margin: 40px auto;
   };
   
   > p {

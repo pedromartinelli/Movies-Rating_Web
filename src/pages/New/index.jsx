@@ -56,7 +56,7 @@ export function New() {
   };
 
   async function handleNewMovie(data) {
-    
+
     if (newTag) {
       return alert('Você deixou uma tag em aberto. Clique para adicionar ou apague-a para continuar.');
     };
@@ -105,7 +105,7 @@ export function New() {
                 <input
                   placeholder='Sua nota (de 0 a 5)'
                   type='number'
-                  min={0}
+                  min={1}
                   max={5}
                   {...register('rating')}
                 />
@@ -146,9 +146,9 @@ export function New() {
           </div>
 
           <div className='Buttons'>
-            <Button
+            {/* <Button
               title='Excluir filme'
-            />
+            /> */}
 
             <Button
               title='Salvar alterações'

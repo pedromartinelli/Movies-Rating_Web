@@ -40,7 +40,6 @@ export const Profile = styled.div`
   display: flex;
   align-items: center;
   gap: 11px;  
-  /* border: 1px solid blue; */
   
   > div {
     display: flex;
@@ -48,12 +47,9 @@ export const Profile = styled.div`
     line-height: 22px;
     align-items: flex-end;
 
-    box-sizing: content-box;
     > a:first-child {
       color: ${({theme}) => theme.COLORS.WHITE};
       font-weight: 700;
-      /* width: 150px; */
-      /* padding-left: 8px; */
     }
 
     > a:last-child {
