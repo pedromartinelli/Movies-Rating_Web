@@ -19,6 +19,15 @@ export function Details() {
   const params = useParams();
   const navigate = useNavigate();
 
+  function addRatingCheckedClass(value) {
+    let checkedClass;
+    if (value <= data.rating - 1) {
+      checkedClass = checkedClass + " checked";
+    }
+
+    return checkedClass;
+  }
+
   useEffect(() => {
     async function fetchMovie() {
       const response = await api.get(`/movies/${params.id}`);
@@ -49,7 +58,14 @@ export function Details() {
                   {data.title}
                 </h1>
 
-                <Rating />
+                <div>
+                  {
+                    [...Array(5).keys()].map((x, index) => {
+                      return <Rating key={index} className={addRatingCheckedClass(x)} />;
+                    })
+                  }
+                </div>
+                {/* <Rating /> */}
               </div>
 
               <div>

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 import { Link } from "react-router-dom";
 
-
 export const Container = styled.div`
   grid-area: header;
   
@@ -40,22 +39,21 @@ export const HomeNav = styled(Link)`
 export const Profile = styled.div`
   display: flex;
   align-items: center;
-
-  gap: 11px;
-
+  gap: 11px;  
+  /* border: 1px solid blue; */
+  
   > div {
     display: flex;
     flex-direction: column;
-
     line-height: 22px;
-
     align-items: flex-end;
 
+    box-sizing: content-box;
     > a:first-child {
       color: ${({theme}) => theme.COLORS.WHITE};
       font-weight: 700;
-      
-      width: 126px;
+      /* width: 150px; */
+      /* padding-left: 8px; */
     }
 
     > a:last-child {

@@ -12,7 +12,7 @@ export const Container = styled.button`
   margin-bottom: 16px;
 
   text-align: left;
-
+  
   > h1 {
     text-align: left;
     font-size: 24px;
@@ -22,6 +22,10 @@ export const Container = styled.button`
   > p {
     margin: 15px 0;
     color: ${({ theme }) => theme.COLORS.GRAY_300};
+
+    overflow: hidden;  
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
   }
 
   > footer {

@@ -47,4 +47,28 @@ export const Content = styled.div`
   margin-bottom: 200px;
 
   overflow-y: auto;
+
+  > p {
+    font-size: 25px;
+    color: ${({ theme }) => theme.COLORS.PINK};
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 30px;
+    margin-top: 100px;
+    
+    > svg {
+      width: 100px;
+      height: 100px;
+      fill: ${({ theme }) => theme.COLORS.PINK};
+
+    }
+  }
+  
+  > button {
+    /* height: 222px; */
+  };
 `;

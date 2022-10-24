@@ -57,6 +57,8 @@ export const Section = styled.section`
     gap: 19px;
    
     > div {
+      display: flex;
+      
       svg {
         width: 20px;
         height: 20px;

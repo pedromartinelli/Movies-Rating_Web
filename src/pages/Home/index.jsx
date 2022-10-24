@@ -9,6 +9,7 @@ import { Header } from "../../components/Header";
 import { Movie } from "../../components/Movie";
 
 import { FiPlus } from "react-icons/fi";
+import { ImFilesEmpty } from 'react-icons/im'
 
 export function Home() {
   const [movies, setMovies] = useState([]);
@@ -16,7 +17,6 @@ export function Home() {
   const navigate = useNavigate();
 
   function handleMovieDetails(id) {
-    console.log('Cliquei')
     navigate(`/details/${id}`);
   };
 
@@ -33,6 +33,7 @@ export function Home() {
     fetchMovies();
   }, []);
 
+  console.log(movies)
   return (
     <Container>
       <Header />
@@ -48,7 +49,11 @@ export function Home() {
         </NewMovie>
 
         <Content>
-          {
+          {(movies.length == 0)
+            ?
+            
+            <p><ImFilesEmpty />Nenhum filme adicionado</p>
+            :
             movies.map(movie => (
               <Movie
                 key={String(movie.id)}
