@@ -3,10 +3,9 @@ import { api } from "../services/api";
 
 const AuthContext = createContext({});
 
-
 function AuthProvider({ children }) {
   const [data, setData] = useState({});
-
+  
   async function SignIn({ email, password }) {
 
     try {
@@ -51,8 +50,9 @@ function AuthProvider({ children }) {
       localStorage.setItem('@rocketnotes:users', JSON.stringify(user));
 
       setData({ user, token: data.token });
-      alert('Perfil Atualizado');
+      alert('Perfil Atualizado!');
 
+      return 'sucesso'
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message);

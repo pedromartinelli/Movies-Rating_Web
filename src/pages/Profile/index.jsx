@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import * as zod from 'zod';
@@ -53,9 +53,12 @@ export function Profile() {
     }
 
     const userUpdated = Object.assign(user, updated);
-    
-    await updateProfile({ user: userUpdated, avatarFile })
-    // navigate(-1)
+
+    const res = await updateProfile({ user: userUpdated, avatarFile })
+        
+    if (res) {
+      navigate(-1)
+    }
   };
 
   function handleAvatarChange(event) {

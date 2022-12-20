@@ -24,7 +24,7 @@ export function New() {
 
   const schema = zod.object({
     title: zod.string().min(1, { message: 'Adicione o título do seu filme.' }),
-    rating: zod.string().min(1, { message: 'Introduza uma nota para seu filme.' }),
+    rating: zod.number({required_error: 'Digite uma nota para o seu filme.'}).min(1, { message: 'Adicione uma nota para o seu filme.' }).gte(1, { message: 'Digite um número de 1 a 5.' }).lte(5, { message: 'Digite um número de 1 a 5.' }),
     description: zod.string().min(1, { message: 'Adicione uma descrição para seu filme.' }),
   });
 
@@ -55,6 +55,7 @@ export function New() {
     setTags(prevState => prevState.filter(tag => tag !== deleted));
   };
 
+
   async function handleNewMovie(data) {
 
     if (newTag) {
@@ -75,6 +76,7 @@ export function New() {
     alert('Nota criada com sucesso!');
     navigate(-1)
   };
+
 
   return (
     <Container>
@@ -107,8 +109,10 @@ export function New() {
                   type='number'
                   min={1}
                   max={5}
-                  {...register('rating')}
-                />
+
+                  {...register('rating', {
+                    setValueAs: (v) => v === "" ? undefined : parseInt(v, 10)
+                  })} />
               </div>
               {errors.rating?.message && <p> <RiErrorWarningFill /> {errors.rating?.message}</p>}
             </div>

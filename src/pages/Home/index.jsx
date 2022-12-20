@@ -20,10 +20,6 @@ export function Home() {
     navigate(`/details/${id}`);
   };
 
-  const funciona = () => {
-    console.log('Funcionou')
-  }
-
   useEffect(() => {
     async function fetchMovies() {
       const response = await api.get('/movies?title');
@@ -33,7 +29,6 @@ export function Home() {
     fetchMovies();
   }, []);
 
-  console.log(movies)
   return (
     <Container>
       <Header />
