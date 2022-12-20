@@ -63,7 +63,7 @@ export function New() {
     };
 
     if (tags.length === 0) {
-      return alert('Adicione uma tag para sua nota.');
+      return alert('Adicione uma tag para seu filme.');
     };
 
     await api.post('/movies', {
@@ -73,7 +73,7 @@ export function New() {
       tags
     });
 
-    alert('Nota criada com sucesso!');
+    alert('Filme adicionado com sucesso!');
     navigate(-1)
   };
 
