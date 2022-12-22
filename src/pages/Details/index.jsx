@@ -14,10 +14,12 @@ import { Tag } from "../../components/Tag";
 
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
 import { FiClock } from 'react-icons/fi';
+import MoonLoader from "react-spinners/MoonLoader";
 
 export function Details() {
   const [data, setData] = useState(null);
   const { user } = useAuth();
+  const [loading, setLoading] = useState(false);
 
   const params = useParams();
   const navigate = useNavigate();
@@ -51,11 +53,23 @@ export function Details() {
     fetchMovie();
   }, []);
 
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+
+    }, 1000);
+  }, []);
+
   return (
     <Container>
       <Header />
 
       {
+        loading
+        ?
+        <MoonLoader className='loader' color="#FF859B" margin={8} />
+        :
         data &&
         <main>
           <Content>
@@ -83,7 +97,6 @@ export function Details() {
                     })
                   }
                 </div>
-                {/* <Rating /> */}
               </div>
 
               <div>
@@ -96,16 +109,6 @@ export function Details() {
               </div>
 
             </Section>
-
-            {/* <Movie
-              data={{
-                tags: [
-                  { id: '1', name: 'Ficção Científica' },
-                  { id: '2', name: 'Drama' },
-                  { id: '3', name: 'Família' }
-                ]
-              }}
-            /> */}
 
             {
               data.tags &&

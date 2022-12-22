@@ -48,6 +48,11 @@ export const Content = styled.div`
 
   overflow-y: auto;
 
+  .loader {
+    margin-left: 50%;
+    margin-top: 180px;
+  }
+
   > p {
     font-size: 25px;
     color: ${({ theme }) => theme.COLORS.PINK};

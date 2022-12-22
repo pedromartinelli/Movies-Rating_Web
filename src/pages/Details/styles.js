@@ -10,6 +10,11 @@ export const Container = styled.div`
   'header'
   'content' ;
 
+  .loader {
+    margin-left: 50%;
+    margin-top: 180px;
+  }
+
   > main {
     grid-area: content;
     overflow-y: auto;

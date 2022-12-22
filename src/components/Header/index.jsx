@@ -38,7 +38,7 @@ export function Header() {
       <Profile>
         <div>
           <Link to='/profile'>{userStoraged.name}</Link>
-          <Link onClick={() => handleLogout()}>sair</Link>
+          <Link to='/' onClick={() => handleLogout()}>sair</Link>
         </div>
 
         <Link to='/profile'>
