@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useAuth } from '../../hooks/auth';
 
 import { api } from '../../services/api';
 
@@ -11,13 +12,17 @@ import { Rating } from "../../components/Rating";
 import { Movie } from "../../components/Movie";
 import { Tag } from "../../components/Tag";
 
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
 import { FiClock } from 'react-icons/fi';
 
 export function Details() {
   const [data, setData] = useState(null);
+  const { user } = useAuth();
 
   const params = useParams();
   const navigate = useNavigate();
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
   function addRatingCheckedClass(value) {
     let checkedClass;
@@ -82,10 +87,9 @@ export function Details() {
               </div>
 
               <div>
-                <img src="https://github.com/pedromartinelli.png" />
-                <span>Por Pedro Martinelli</span>
+                <img src={avatarUrl} />
+                <span>{user.name}</span>
                 <FiClock />
-                {/* <span>21/09/22 às 19:22</span> */}
                 <span>
                   {data.created_at}
                 </span>

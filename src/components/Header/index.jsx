@@ -47,6 +47,7 @@ export function Header() {
             alt="Imagem de perfil do usuário."
           />
         </Link>
+        
       </Profile>
     </Container>
   );
