@@ -4,10 +4,8 @@ import { useAuth } from '../../hooks/auth';
 import { api } from "../../services/api";
 
 import { Container, HomeNav, Profile } from "./styles";
-import { Input } from '../Input';
 
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
-import { FiSearch } from 'react-icons/fi';
 
 export function Header() {
   const { SignOut, user } = useAuth();
@@ -28,12 +26,6 @@ export function Header() {
       <HomeNav to='/'>
         <h1>moviesRating</h1>
       </HomeNav>
-
-      <Input
-        placeholder='Pesquisar pelo título'
-        icon={FiSearch}
-        type='text'
-      />
 
       <Profile>
         <div>

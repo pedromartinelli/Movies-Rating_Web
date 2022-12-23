@@ -12,16 +12,9 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   
-  gap: 64px; 
-  padding: 0 123px;
+  padding: 0 200px;
 
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_500};
-
-  > div:nth-child(2) {
-    margin-bottom: 0;
-    width: 53%; 
-    
-  }
 `;
 
 export const HomeNav = styled(Link)`
@@ -37,6 +30,7 @@ export const HomeNav = styled(Link)`
 `;
 
 export const Profile = styled.div`
+
   display: flex;
   align-items: center;
   gap: 11px;  
@@ -48,7 +42,7 @@ export const Profile = styled.div`
     align-items: flex-end;
 
     > a:first-child {
-      color: ${({theme}) => theme.COLORS.WHITE};
+      color: ${({ theme }) => theme.COLORS.WHITE};
       font-weight: 700;
     }
 

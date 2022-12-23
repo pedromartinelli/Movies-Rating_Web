@@ -15,7 +15,13 @@ export const NewMovie = styled.div`
   justify-content: space-between;
 
   margin: 63px 0 50px;
-  font-size: 32px;    
+  font-size: 32px;
+    
+  > div {
+    max-width: 50%;
+    margin-top: 10px;
+  };
+  
 
   > a {
       display: flex;
